@@ -1,32 +1,29 @@
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "scanner.h"
 
+
 int main(){
-    Token token;
-    
-    /*Guardo un token en la variable 'token' que es devuelto por la funcion*/
+
     do{
         token = get_token(); 
  
         switch(token){
             case SEP:
-            printf("Separador:"); 
+            printf("Separador: %s\n", SEP); 
             break;
             case CAD:
-            printf("Cadena:");
-            break; 
+            printf("Cadena: %s\n", CAD);
+            break;
             case FDT:
-            printf(" ");
+            printf("Fin de Texto: ");
             break;
             default: printf("El token no fue identificado");
 
         }
 
-    }while (token= getchar()!=EOF);
+    }while (token!=FDT);
 
-    
-    
+    return EXIT_SUCCESS;
     
 }
